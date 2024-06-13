@@ -62,7 +62,7 @@ public class App { //This code defines a new class called App. A class is like a
             break;
             
             case 0: 
-            System.out.println("Kiitos ohjelman käytöstä.");+
+            System.out.println("Kiitos ohjelman käytöstä.");
             skanneri.nextLine();
             skanneri.close();
             return;
