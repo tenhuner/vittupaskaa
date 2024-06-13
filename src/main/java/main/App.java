@@ -10,7 +10,7 @@ public class App { //This code defines a new class called App. A class is like a
 
        while (true) { //Keeps printing menu when while is true
        System.out.println("1) Pistä siili puhumaan, 2) Luo uusi siili, 3) Juoksuta siiliä, 0) Lopeta ohjelma"); //Prints menu to user
-       int valinta; //Initializes a variable for user selection
+       int valinta = 0; //Initializes a variable for user selection
        
        try {
          valinta = skanneri.nextInt(); //Reads users choice
@@ -48,7 +48,7 @@ public class App { //This code defines a new class called App. A class is like a
              break;
 
             case 3:
-            int kierrokset; //Initializes a variable for user selection
+            int kierrokset = 0; //Initializes a variable for user selection
             try {
                 System.out.println("Kuinka monta kierrosta?");
                 kierrokset = skanneri.nextInt();
