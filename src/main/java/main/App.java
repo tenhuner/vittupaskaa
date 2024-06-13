@@ -8,7 +8,8 @@ public class App { //This code defines a new class called App. A class is like a
        Scanner skanneri = new Scanner(System.in); //Creates scanner olio to read user written text, must be in public so Hedgehog.java can use this also
        Hedgehog siilinnimijaika = new Hedgehog("Pikseli", 2); //Creates orginal hedgehog
 
-       while (true) { //Keeps printing menu when while is true
+       boolean exit = false;
+       while (!exit) { //Keeps printing menu when while is true
        System.out.println("1) Pistä siili puhumaan, 2) Luo uusi siili, 3) Juoksuta siiliä, 0) Lopeta ohjelma"); //Prints menu to user
        int valinta = 0; //Initializes a variable for user selection
        
@@ -63,8 +64,8 @@ public class App { //This code defines a new class called App. A class is like a
             
             case 0: 
             System.out.println("Kiitos ohjelman käytöstä.");
-            skanneri.close();
-            return;
+            exit = true;
+            break;
             
             default: //Maybe some error guides here
             System.out.println("Syöte oli väärä");
