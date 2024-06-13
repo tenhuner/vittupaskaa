@@ -9,7 +9,7 @@ public class App { //This code defines a new class called App. A class is like a
        Hedgehog siilinnimijaika = new Hedgehog("Pikseli", 2); //Creates orginal hedgehog
 
        boolean exit = false;
-       while (!exit) { //Keeps printing menu when while is true
+       while (!exit) {
        System.out.println("1) Pistä siili puhumaan, 2) Luo uusi siili, 3) Juoksuta siiliä, 0) Lopeta ohjelma"); //Prints menu to user
        int valinta = 0; //Initializes a variable for user selection
        
