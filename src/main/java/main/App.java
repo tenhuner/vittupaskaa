@@ -63,7 +63,6 @@ public class App { //This code defines a new class called App. A class is like a
             
             case 0: 
             System.out.println("Kiitos ohjelman käytöstä.");
-            skanneri.close();
             break;
             
             default: //Maybe some error guides here
