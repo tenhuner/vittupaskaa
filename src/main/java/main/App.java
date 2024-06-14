@@ -20,6 +20,7 @@ public class App { //This code defines a new class called App. A class is like a
        } catch (InputMismatchException e) {
         System.out.println("Syöte oli väärä");
         skanneri.next(); // Clear the invalid input
+        skanneri.nextLine();
         continue; // Restart the loop
        }
 
@@ -80,6 +81,5 @@ public class App { //This code defines a new class called App. A class is like a
         }
         skanneri.close();
     }
-   
 }
 
