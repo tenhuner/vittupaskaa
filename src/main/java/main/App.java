@@ -79,6 +79,7 @@ public class App { //This code defines a new class called App. A class is like a
 
             }
         }
+        skanneri.close();
     }
 }
 
