@@ -26,7 +26,11 @@ public class App { //This code defines a new class called App. A class is like a
         case 1: //If user chooses 1 this happens. User chose to make the hedgehog talk
             System.out.println("Mitä siili sanoo:");
             String puhesyote = skanneri.nextLine(); //saves what user writes 
+            if (puhesyote.trim().isEmty()) {
+            System.out.println("Olen " + siilinnimijaika.getSiilinnimi() + " ja ikäni on " + siilinnimijaika.getika() + " vuotta, mutta antaisitko silti syötteen?");
+            } else {
             siilinnimijaika.puhemetodi(puhesyote); //calls puhemetodi with puhesyote input 
+            }
             break;
 
         case 2: //The user chose to make a new hedgehog
