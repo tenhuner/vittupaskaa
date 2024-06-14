@@ -67,8 +67,7 @@ public class App { //This code defines a new class called App. A class is like a
             siilinnimijaika.juoksumetodi(kierrokset);
             break;
             
-            case 0: 
-            skanneri.close();
+            case 0:
             System.out.println("Kiitos ohjelman käytöstä.");
             exit = true;
             break;
@@ -81,5 +80,6 @@ public class App { //This code defines a new class called App. A class is like a
         }
         skanneri.close();
     }
+   
 }
 
