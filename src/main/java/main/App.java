@@ -3,9 +3,10 @@ import java.util.InputMismatchException; // "Import" brings necessary classes to
 import java.util.Scanner; // "Import" brings necessary classes to the main program
 
 public class App { //This code defines a new class called App. A class is like a template from which objects can be created 
-    public static void main( String[] args ) { //This is the main method. When the program is started, this code is executed first. main method is a special method that is used to start program execution.
+    public static void main(String[]args) { //This is the main method. When the program is started, this code is executed first. main method is a special method that is used to start program execution.
     
-       Scanner skanneri = new Scanner(System.in); //Creates scanner olio to read user written text, must be in public so Hedgehog.java can use this also
+       
+        Scanner skanneri = new Scanner(System.in); //Creates scanner olio to read user written text, must be in public so Hedgehog.java can use this also
        Hedgehog siilinnimijaika = new Hedgehog("Pikseli", 2); //Creates orginal hedgehog
 
        boolean exit = false;
@@ -15,8 +16,7 @@ public class App { //This code defines a new class called App. A class is like a
        
        try {
          valinta = skanneri.nextInt(); //Reads users choice
-         
-         skanneri.nextLine(); //this may be necessary;
+        skanneri.nextLine(); //this may be necessary;
        } catch (InputMismatchException e) {
         System.out.println("Syöte oli väärä");
         skanneri.next(); // Clear the invalid input
@@ -68,6 +68,7 @@ public class App { //This code defines a new class called App. A class is like a
             break;
             
             case 0: 
+            skanneri.close();
             System.out.println("Kiitos ohjelman käytöstä.");
             exit = true;
             break;
@@ -80,3 +81,4 @@ public class App { //This code defines a new class called App. A class is like a
         }
     }
 }
+
