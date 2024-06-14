@@ -1,12 +1,15 @@
 package main; //Package is like folder. Package can contain many classes. 
 import java.util.Scanner; // "Import" brings necessary classes to the main program
 
-public class App { //This code defines a new class called App. A class is like a template from which objects can be created 
+public class App { 
+
+    private static String siilinika;
+//This code defines a new class called App. A class is like a template from which objects can be created 
     public static void main(String[]args) { //This is the main method. When the program is started, this code is executed first. main method is a special method that is used to start program execution.
     
        
         Scanner skanneri = new Scanner(System.in); //Creates scanner olio to read user written text, must be in public so Hedgehog.java can use this also
-       Hedgehog siilinnimijaika = new Hedgehog("Pikseli", siilinika:"2"); //Creates orginal hedgehog
+       Hedgehog siilinnimijaika = new Hedgehog(siilinnimi:"Pikseli", siilinika:"2"); //Creates orginal hedgehog
 
        boolean exit = false;
        while (!exit) {
@@ -36,7 +39,7 @@ public class App { //This code defines a new class called App. A class is like a
             System.out.println("Anna siilin nimi:"); //prints the question
             String siilinnimi = skanneri.nextLine(); //reads user input
             String ikaString;
-            int siilinika; //Initializes a variable for user selection
+            String siilinika; //Initializes a variable for user selection
                     // Reading the age and handling invalid inputs
                     try {
                         System.out.println("Anna siilin ikä:");
