@@ -1,5 +1,4 @@
 package main; //Package is like folder. Package can contain many classes. 
-import java.util.InputMismatchException; // "Import" brings necessary classes to the main program
 import java.util.Scanner; // "Import" brings necessary classes to the main program
 
 public class App { //This code defines a new class called App. A class is like a template from which objects can be created 
@@ -12,22 +11,20 @@ public class App { //This code defines a new class called App. A class is like a
        boolean exit = false;
        while (!exit) {
        System.out.println("1) Pistä siili puhumaan, 2) Luo uusi siili, 3) Juoksuta siiliä, 0) Lopeta ohjelma"); //Prints menu to user
-       int valinta = 0; //Initializes a variable for user selection
+       String valintaString = skanneri.nextLine(); // Lukee käyttäjän valinnan rivinä
+       int valinta; //Initializes a variable for user selection
        
        try {
-         valinta = skanneri.nextInt(); //Reads users choice
-        skanneri.nextLine(); //this may be necessary;
-       } catch (InputMismatchException e) {
+        valinta = Integer.parseInt(valintaString);
+       } catch (NumberFormatException e) {
         System.out.println("Syöte oli väärä");
-        skanneri.next(); // Clear the invalid input
-        skanneri.nextLine();
         continue; // Restart the loop
        }
 
     switch (valinta) { //starts switch sentence
         case 1: //If user chooses 1 this happens. User chose to make the hedgehog talk
             System.out.println("Mitä siili sanoo:");
-            String puhesyote = skanneri.nextLine(); //saves what user writes 
+            String puhesyote = skanneri.nextLine();
             if (puhesyote.trim().isEmpty()) {
             System.out.println("Olen " + siilinnimijaika.getSiilinnimi() + " ja ikäni on " + siilinnimijaika.getika() + " vuotta, mutta antaisitko silti syötteen?");
             } else {
@@ -38,15 +35,15 @@ public class App { //This code defines a new class called App. A class is like a
         case 2: //The user chose to make a new hedgehog
             System.out.println("Anna siilin nimi:"); //prints the question
             String siilinnimi = skanneri.nextLine(); //reads user input
+            String ikaString;
             int siilinika; //Initializes a variable for user selection
                     // Reading the age and handling invalid inputs
                     try {
                         System.out.println("Anna siilin ikä:");
-                        siilinika = skanneri.nextInt();
-                        skanneri.nextLine(); // Consume the newline character
-                    } catch (InputMismatchException e) { // If the input is not a number, print an error message and start the loop again
+                        ikaString = skanneri.nextLine();
+                        siilinika = Integer.parseInt(ikaString); // Consume the newline character
+                    } catch (NumberFormatException e) { // If the input is not a number, print an error message and start the loop again
                         System.out.println("Syöte oli väärä");
-                        skanneri.next(); // Clear the invalid input
                         continue; // Restart the loop
                     }
 
@@ -55,14 +52,14 @@ public class App { //This code defines a new class called App. A class is like a
              break;
 
             case 3:
-            int kierrokset = 0; //Initializes a variable for user selection
+            String kierroksetString;
+            int kierrokset; //Initializes a variable for user selection
             try {
                 System.out.println("Kuinka monta kierrosta?");
-                kierrokset = skanneri.nextInt();
-                skanneri.nextLine();
-            } catch (InputMismatchException e) { // If the input is not a number, print an error message and start the loop again
+                kierroksetString = skanneri.nextLine();
+                kierrokset = Integer.parseInt(kierroksetString);
+            } catch (NumberFormatException e) { // If the input is not a number, print an error message and start the loop again
                 System.out.println("Syöte oli väärä");
-                skanneri.next(); // Clear the invalid input
                 continue; // Restart the loop
             }
             siilinnimijaika.juoksumetodi(kierrokset);
@@ -70,8 +67,9 @@ public class App { //This code defines a new class called App. A class is like a
             
             case 0:
             System.out.println("Kiitos ohjelman käytöstä.");
+            skanneri.close();
             exit = true;
-            break;
+            return;
             
             default: //Maybe some error guides here
             System.out.println("Syöte oli väärä");
@@ -79,7 +77,7 @@ public class App { //This code defines a new class called App. A class is like a
 
             }
         }
-        skanneri.close();
+
     }
 }
 
