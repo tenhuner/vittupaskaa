@@ -15,6 +15,7 @@ public class App { //This code defines a new class called App. A class is like a
        
        try {
          valinta = skanneri.nextInt(); //Reads users choice
+         
          skanneri.nextLine(); //this may be necessary;
        } catch (InputMismatchException e) {
         System.out.println("Syöte oli väärä");
