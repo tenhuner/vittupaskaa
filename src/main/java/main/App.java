@@ -6,7 +6,7 @@ public class App { //This code defines a new class called App. A class is like a
     
        
         Scanner skanneri = new Scanner(System.in); //Creates scanner olio to read user written text, must be in public so Hedgehog.java can use this also
-       Hedgehog siilinnimijaika = new Hedgehog("Pikseli", 2); //Creates orginal hedgehog
+       Hedgehog siilinnimijaika = new Hedgehog("Pikseli", siilinika:"2"); //Creates orginal hedgehog
 
        boolean exit = false;
        while (!exit) {
