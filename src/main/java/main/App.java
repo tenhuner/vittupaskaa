@@ -9,7 +9,7 @@ public class App {
     
        
         Scanner skanneri = new Scanner(System.in); //Creates scanner olio to read user written text, must be in public so Hedgehog.java can use this also
-       Hedgehog siilinnimijaika = new Hedgehog(siilinnimi:"Pikseli", siilinika:"2"); //Creates orginal hedgehog
+       Hedgehog siilinnimijaika = new Hedgehog("Pikseli", "2"); //Creates orginal hedgehog
 
        boolean exit = false;
        while (!exit) {
@@ -38,17 +38,10 @@ public class App {
         case 2: //The user chose to make a new hedgehog
             System.out.println("Anna siilin nimi:"); //prints the question
             String siilinnimi = skanneri.nextLine(); //reads user input
-            String ikaString;
-            String siilinika; //Initializes a variable for user selection
+            String siilinika; //Initializes a variable
                     // Reading the age and handling invalid inputs
-                    try {
-                        System.out.println("Anna siilin ikä:");
-                        ikaString = skanneri.nextLine();
-                        siilinika = Integer.parseInt(ikaString); // Consume the newline character
-                    } catch (NumberFormatException e) { // If the input is not a number, print an error message and start the loop again
-                        System.out.println("Syöte oli väärä");
-                        continue; // Restart the loop
-                    }
+                    System.out.println("Anna siilin ikä:");
+                    siilinika = skanneri.nextLine();
 
 
              siilinnimijaika = new Hedgehog(siilinnimi, siilinika); // new hedgehog is created based on user input
@@ -70,9 +63,8 @@ public class App {
             
             case 0:
             System.out.println("Kiitos ohjelman käytöstä.");
-            skanneri.close();
             exit = true;
-            return;
+            break;
             
             default: //Maybe some error guides here
             System.out.println("Syöte oli väärä");
@@ -80,7 +72,7 @@ public class App {
 
             }
         }
-
+        skanneri.close();
     }
 }
 
